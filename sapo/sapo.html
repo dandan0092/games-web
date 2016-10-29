@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Perereca Play</title>
+<link rel="icon" href="sapa.png">
+
+<style>
+body {
+    background-image: url("bg.jpg");
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
+table, td {
+   border: 1px black;
+}
+
+td {
+   width: 200px;
+   text-align: center;
+   color: rgba(76, 175, 80, 0.5);
+}
+
+#divContent {
+    z-index:3;
+    margin: auto;
+    padding: 10px;	
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+
+}
+
+#divStone {
+    z-index:2;
+    margin: auto;
+    padding: 10px;	
+    
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+
+}
+
+#divBg {
+    height: 200px;
+    width: 100%;
+    z-index:1;
+    margin: auto;
+    padding: 10px;	
+    background: rgba(76, 175, 80, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+#divButton {
+    margin: auto;
+    padding: 10px;	
+    background: rgba(76, 175, 80, 0.5);
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+img {
+    width: 150px;
+}
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+</style>
+
+<style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 4; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+</style>
+</head>
+<body>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">×</span>
+      <h1>You win!</h1>
+    </div>
+    <div class="modal-body">
+      <p>Congratulations!!! You're a very inteligent person.</p>
+      <p>You're SUPER...</p>
+    </div>
+    <div class="modal-footer">
+      <h3>Try solve over and over and over again...</h3>
+    </div>
+  </div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+</script>
+
+
+<div id="divBg">
+
+</div>
+
+<div id="divStone">
+	<table>
+  		<tr>
+			<td><img src='pedra.png'></td>
+			<td><img src='pedra.png'></td>
+			<td><img src='pedra.png'></td>
+			<td><img src='pedra.png'></td>
+			<td><img src='pedra.png'></td>
+			<td><img src='pedra.png'></td>
+			<td><img src='pedra.png'></td>
+  		</tr>
+	</table>
+</div>
+
+
+<div id="divContent">
+	<table id="sapo">
+  		<tr>
+			<td id='t0'><img name='sapa' id='0' src='sapa.png' onclick='myFunction(0)'></td>
+			<td id='t1'><img name='sapa' id='1' src='sapa.png' onclick='myFunction(1)'></td>
+			<td id='t2'><img name='sapa' id='2' src='sapa.png' onclick='myFunction(2)'></td>
+			<td id='t3'></td>
+			<td id='t4'><img name='sapo' id='4' src='sapo.png' onclick='myFunction(4)'></td>
+			<td id='t5'><img name='sapo' id='5' src='sapo.png' onclick='myFunction(5)'></td>
+			<td id='t6'><img name='sapo' id='6' src='sapo.png' onclick='myFunction(6)'></td>
+  		</tr>
+	</table>
+	
+</div>
+	<div id="divButton">
+		<button onClick="window.location.reload()">Restart</button>
+	</div>
+<script>
+
+function myFunction(index) { 
+	var vazio = 7;
+
+	for(var x = 0; x < 7; x++) {
+		if(document.getElementById("sapo").rows[0].cells.item(x).innerHTML == "") vazio = x;
+	}
+	
+	var sapo = document.getElementById(index).name;
+	
+
+	if(sapo == "sapo") {
+		var p1 = index - 1;
+		var v1 = document.getElementById("sapo").rows[0].cells.item(p1).innerHTML;
+		var imagem = "sapo.png";
+
+		if(index >= 2) {
+			var p2 = index - 2;
+			var v2 = document.getElementById("sapo").rows[0].cells.item(p2).innerHTML;
+		}
+		
+		if(v1 == "") {
+			document.getElementById("sapo").rows[0].cells.item(index).innerHTML="";
+			document.getElementById("sapo").rows[0].cells.item(vazio).innerHTML="<img name='sapo' id='"+ vazio +"' src='" + imagem + "' onclick='myFunction("+ vazio +")'>";
+		}
+		
+		if(v2 == "") {
+			document.getElementById("sapo").rows[0].cells.item(index).innerHTML="";
+			document.getElementById("sapo").rows[0].cells.item(vazio).innerHTML="<img name='sapo' id='"+ vazio +"' src='" + imagem + "' onclick='myFunction("+ vazio +")'>";
+		}		
+	}
+
+	if(sapo == "sapa") {
+		var p1 = index + 1;
+		var v1 = document.getElementById("sapo").rows[0].cells.item(p1).innerHTML;
+		var imagem = "sapa.png";
+		
+		if(index <= 4) {
+			var p2 = index + 2;
+			var v2 = document.getElementById("sapo").rows[0].cells.item(p2).innerHTML;
+		}
+		
+		if(v1 == "") {
+			document.getElementById("sapo").rows[0].cells.item(index).innerHTML="";
+			document.getElementById("sapo").rows[0].cells.item(vazio).innerHTML="<img name='sapa' id='"+ vazio +"' src='" + imagem + "' onclick='myFunction("+ vazio +")'>";
+		}
+
+		if(v2 == "") {
+			document.getElementById("sapo").rows[0].cells.item(index).innerHTML="";
+			document.getElementById("sapo").rows[0].cells.item(vazio).innerHTML="<img name='sapa' id='"+ vazio +"' src='" + imagem + "' onclick='myFunction("+ vazio +")'>";
+		}
+	}
+	
+	
+	if(document.getElementById("sapo").rows[0].cells.item(6).innerHTML == '<img name="sapa" id="6" src="sapa.png" onclick="myFunction(6)">'
+		 && document.getElementById("sapo").rows[0].cells.item(5).innerHTML == '<img name="sapa" id="5" src="sapa.png" onclick="myFunction(5)">'
+		 && document.getElementById("sapo").rows[0].cells.item(4).innerHTML == '<img name="sapa" id="4" src="sapa.png" onclick="myFunction(4)">'
+		 && document.getElementById("sapo").rows[0].cells.item(0).innerHTML == '<img name="sapo" id="0" src="sapo.png" onclick="myFunction(0)">'
+		 && document.getElementById("sapo").rows[0].cells.item(1).innerHTML == '<img name="sapo" id="1" src="sapo.png" onclick="myFunction(1)">'
+		 && document.getElementById("sapo").rows[0].cells.item(2).innerHTML == '<img name="sapo" id="2" src="sapo.png" onclick="myFunction(2)">') {
+		// Get the modal
+		var modal = document.getElementById('myModal')
+		modal.style.display = "block";
+	
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+			window.location.reload();
+		}
+	
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+	    		if (event.target == modal) {
+				window.location.reload();
+	    		}
+		}
+	}
+
+}
+
+</script>
+
+</body>
+</html>
